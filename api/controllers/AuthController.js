@@ -5,6 +5,8 @@ module.exports = {
     Company.findOne({domain: req.body.company.domain})
       .then(company => {
         if (company) req.body.company = company.id;
+        var temp = req.body.email.split('@');
+        req.body.company.domain = temp[1];
         User.create(req.body)
           .then(user => {
             user.token = JwtService.issue({id: user.id});
