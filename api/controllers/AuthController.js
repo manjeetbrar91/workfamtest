@@ -7,14 +7,18 @@ module.exports = {
         if (company) req.body.company = company.id;
         var temp = req.body.email.split('@');
         req.body.company.domain = temp[1];
-        User.create(req.body)
-          .then(user => {
-            user.token = JwtService.issue({id: user.id});
-            return res.ok(user, 'Account Created');
-          }).catch(error => {
-          sails.log.error(error);
-          return res.ok(error, 'Error while creating Account','FAIL');
-        })
+        User.findOne({email: req.body.email})
+          .then(user=>{
+            if(user) return res.ok(null, 'Account with given email already exist','FAIL');
+            User.create(req.body)
+              .then(user => {
+                user.token = JwtService.issue({id: user.id});
+                return res.ok(user, 'Account Created');
+              }).catch(error => {
+              sails.log.error(error);
+              return res.ok(error, 'Error while creating Account','FAIL');
+            })
+          })
       })
   },
   login: (req,res)=>{
