@@ -41,7 +41,7 @@ module.exports = {
         if (!businessUser) return res.ok(null, 'User_Not_Found', 'FAILED');
         BusinessUser.compare(req.body.password, businessUser, (error,match)=>{
           if (match) {
-            businessUser.token = 'DAS '+jwtService.issue({id: businessUser.id,businessId: businessUser.businessId});
+            businessUser.token = 'DAS '+JwtService.issue({id: businessUser.id,businessId: businessUser.businessId});
             return res.ok(businessUser, 'SUCCESS', 'OK');
           } else  {
             return rtes.ok(null, 'Invalid_Password', 'FAILED');

@@ -64,6 +64,14 @@ module.exports.connections = {
     password: 'root', //optional
     database: 'workfam' //optional
   },
+  azureServer: {
+    adapter: 'sails-mongo',
+    host: 'workfam-db.documents.azure.com',
+    port: '10255',
+    user: 'workfam-db', //optional
+    password: 'TLlVnyrMOh8x2uZDj6E6swJWkhYYBFCrkBIJE83yVlSqk8bJzZOtQzVe9XXcuBBxfKbvE5qMaCTbFHwy8kWIzg==', //optional
+    database: 'workfam-db' //optional
+  },
 
   /***************************************************************************
   *                                                                          *
