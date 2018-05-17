@@ -58,10 +58,10 @@ module.exports.connections = {
   ***************************************************************************/
   mlabServer: {
     adapter: 'sails-mongo',
-    host: 'ds012538.mlab.com',
-    port: 12538,
-    user: 'workfamuser', //optional
-    password: 'workfampassword', //optional
+    host: 'ds051625.mlab.com',
+    port: 51625,
+    user: 'root', //optional
+    password: 'root', //optional
     database: 'workfam' //optional
   },
 

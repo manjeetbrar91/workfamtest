@@ -12,7 +12,7 @@
  * ```
  */
 
-module.exports = function forbidden (data, options) {
+module.exports = function forbidden (data, message,code) {
 
   // Get access to `req`, `res`, & `sails`
   var req = this.req;
@@ -20,7 +20,8 @@ module.exports = function forbidden (data, options) {
   var sails = req._sails;
 
   // Set status code
-  res.status(403);
+  res.status(401);
+
   // Log error to console
   if (data !== undefined) {
     sails.log.verbose('Sending 403 ("Forbidden") response: \n',data);
