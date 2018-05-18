@@ -21,10 +21,10 @@ module.exports = {
       type: 'string'
     },
     category: {
-
+      model: 'Category'
     },
     subCategory: {
-
+      model: 'SubCategory'
     },
     eventType: {
       type: 'string',
@@ -39,38 +39,48 @@ module.exports = {
     toDate: {
       type: 'datetime'
     },
+    requirement: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+    min: {
+      type: 'string'
+    },
+    max: {
+      type: 'string'
+    },
     isRegular: {
-
+      type: 'boolean'
     },
     regularTiming: {
-
+      type: 'json'
     },
     specificTiming: {
-
+      type: 'json'
     },
     pricing: {
-
+      type: 'json'
     },
     coverImage: {
-
+      model: 'Media'
     },
     supplementaryImages: {
       type: 'array'
     },
     location: {
-
+      type: 'json'
     },
     scenario1: {
-
+      type: 'string'
     },
     scenario2: {
-
+      type: 'string'
     },
     scenario3: {
-
+      type: 'string'
     },
     eventQuestions: {
-
+      type: 'json'
     }
   }
 };

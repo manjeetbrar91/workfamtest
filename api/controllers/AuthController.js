@@ -44,7 +44,7 @@ module.exports = {
             businessUser.token = 'DAS '+JwtService.issue({id: businessUser.id,businessId: businessUser.businessId});
             return res.ok(businessUser, 'SUCCESS', 'OK');
           } else  {
-            return rtes.ok(null, 'Invalid_Password', 'FAILED');
+            return res.ok(null, 'Invalid_Password', 'FAILED');
           }
         });
       });
